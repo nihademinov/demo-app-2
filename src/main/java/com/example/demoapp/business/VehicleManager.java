@@ -23,7 +23,7 @@ import static com.example.demoapp.api.model.constrants.ValidationMessages.VEHICL
 public class VehicleManager {
 
     private final VehicleRepository vehicleRepository;
-    private final ModelMapper modelMapper = new ModelMapper();
+    private final ModelMapper modelMapper ;
 
     public List<VehicleResponseDto> getAllVehicles() {
         List<Vehicle> allVehicles = vehicleRepository.findAllByActiveTrue();

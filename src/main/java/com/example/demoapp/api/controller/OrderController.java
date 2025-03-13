@@ -32,8 +32,8 @@ public class OrderController {
         return orderService.updateOrder(request, orderId);
     }
 
-    @DeleteMapping
-    public void deleteOrder(@RequestBody UUID orderId) {
+    @DeleteMapping("/{orderId}")
+    public void deleteOrder(@PathVariable UUID orderId) {
         orderService.deleteOrder(orderId);
     }
 }

@@ -25,7 +25,7 @@ public class OrderManager {
     private final OrderRepository orderRepository;
     private final UserManager userManager;
     private final VehicleManager vehicleManager;
-    private final ModelMapper modelMapper = new ModelMapper();
+    private final ModelMapper modelMapper;
 
     public List<OrderResponseDto> getAllOrders() {
         List<Order> allOrders = orderRepository.findAllByActiveTrue();

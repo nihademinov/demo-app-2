@@ -8,16 +8,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-
 public class OpenApiConfig {
 
     @Bean
     public OpenAPI customOpenApi() {
         return new OpenAPI()
-                .addServersItem(new Server().url("http://localhost:8080")
-                        .description("local"))
-                .info(new Info().title("Demo API").version("V0")
+                .addServersItem(new Server().url("http://localhost:8080").description("Local environment"))
+                .info(new Info().title("Demo API").version("V0.1")
                         .license(new License().name("Apache 2.0").url("https://springdoc.org/v2/")));
     }
-
 }

@@ -5,6 +5,8 @@ import com.example.demoapp.api.model.request.OrderUpdateDto;
 import com.example.demoapp.api.model.response.OrderResponseDto;
 import com.example.demoapp.business.OrderManager;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class OrderService {
     private final OrderManager orderManager;
 
@@ -29,7 +32,7 @@ public class OrderService {
     }
 
     public OrderResponseDto updateOrder(OrderUpdateDto request, UUID orderId) {
-       return orderManager.updateOrder(request,orderId);
+        return orderManager.updateOrder(request, orderId);
     }
 
 }

@@ -26,7 +26,7 @@ import static com.example.demoapp.api.model.constrants.ValidationMessages.USER_N
 public class UserManager {
     private final UserRepository userRepository;
     private final RoleManager roleManager;
-    private final ModelMapper modelMapper = new ModelMapper();
+    private final ModelMapper modelMapper;
 
     public UserResponseDto getUserInfo(UUID userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new NotFoundException(USER_NOT_FOUND));
