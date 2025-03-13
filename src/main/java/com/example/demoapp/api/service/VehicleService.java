@@ -25,7 +25,6 @@ public class VehicleService {
     }
 
     public VehicleResponseDto updateVehicle(VehicleUpdateDto requestDto, UUID vehicleId){
-        vehicleValidator.validator(vehicleId);
         return vehicleManager.updateVehicle(requestDto,vehicleId);
     }
 

@@ -20,7 +20,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "UserAccount",schema = "VehicleRent")
+@Table(name = "UserAccount")
 public class User {
 
     @Id

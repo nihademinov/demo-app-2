@@ -8,6 +8,8 @@ import com.example.demoapp.business.validator.UserValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -15,8 +17,8 @@ public class UserService {
     private final UserManager userManager;
     private final UserValidator userValidator;
 
-    public UserResponseDto getUserInfo(UserRequestDto request){
-        return userManager.getUserInfo(request);
+    public UserResponseDto getUserInfo(UUID userId){
+        return userManager.getUserInfo(userId);
     }
 
     public String createNewUser(UserCreateDto request){

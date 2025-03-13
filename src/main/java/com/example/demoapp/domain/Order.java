@@ -14,7 +14,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Order")
+@Table(name = "VehicleOrder")
 public class Order {
 
     @Id
@@ -22,11 +22,11 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "VehicleId")
     private Vehicle vehicle;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "UserId")
     private User user;
 
@@ -35,6 +35,9 @@ public class Order {
 
     @Column(name = "ReceiveDate")
     private Instant receiveDate;
+
+    @Column(name = "DeliveryDate")
+    private Instant deliveryDate;
 
     @Column(name = "CreatedAt", updatable = false)
     @CreationTimestamp

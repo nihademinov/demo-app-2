@@ -16,6 +16,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.UUID;
+
+import static com.example.demoapp.api.model.constrants.ValidationMessages.USER_NOT_FOUND;
 
 @Slf4j
 @Component
@@ -25,8 +28,8 @@ public class UserManager {
     private final RoleManager roleManager;
     private final ModelMapper modelMapper = new ModelMapper();
 
-    public UserResponseDto getUserInfo(UserRequestDto request) {
-        User user = userRepository.findByEmail(request.getEmail()).orElseThrow(() -> new NotFoundException("User Tapilmadi"));
+    public UserResponseDto getUserInfo(UUID userId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new NotFoundException(USER_NOT_FOUND));
         return modelMapper.map(user, UserResponseDto.class);
     }
     public String createNewUser(UserCreateDto request) {
@@ -43,6 +46,10 @@ public class UserManager {
         return userRepository.existsByEmail(email);
     }
 
+    public boolean existsById(UUID userId) {
+        return userRepository.existsById(userId);
+    }
+
     private static UserContact createContact(String phoneNumber) {
         if (phoneNumber != null && !phoneNumber.isEmpty()) {
             return UserContact.builder().mobileNumber(phoneNumber).build();
@@ -56,6 +63,10 @@ public class UserManager {
             throw new CustomValidationException(ValidationMessages.ROLES_NOT_EMPTY_VALIDATION);
         }
         return allRoles;
+    }
+
+    public User getUserById(UUID userId) {
+        return userRepository.findById(userId).orElseThrow(() -> new NotFoundException(USER_NOT_FOUND));
     }
 
 

@@ -23,11 +23,11 @@ public class UserCreateDto {
 
     @NotBlank(message = ValidationMessages.NAME_NOT_NULL_VALIDATION)
     @Size(min = 3, max = 64, message = ValidationMessages.NAME_SIZE_VALIDATION)
-    private String name;
+    private String firstName;
 
     @NotBlank(message = ValidationMessages.NAME_NOT_NULL_VALIDATION)
     @Size(min = 3, max = 64, message = ValidationMessages.NAME_SIZE_VALIDATION)
-    private String surname;
+    private String lastName;
 
 
     @NotBlank(message = ValidationMessages.ROLE_VALIDATION)

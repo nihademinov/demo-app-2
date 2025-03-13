@@ -52,10 +52,16 @@ public class VehicleManager {
     }
 
     public void deleteVehicle(UUID vehicleId) {
-        vehicleRepository.deleteById(vehicleId);
+        Vehicle vehicle = vehicleRepository.findById(vehicleId).orElseThrow(()-> new NotFoundException(VEHICLE_NOT_FOUND));
+        vehicle.setActive(false);
+        vehicleRepository.save(vehicle);
     }
 
     public boolean existsVehicle(UUID vehicleId) {
         return vehicleRepository.existsById(vehicleId);
+    }
+
+    public Vehicle getVehicleById(UUID vehicleId) {
+        return vehicleRepository.findById(vehicleId).orElseThrow(() -> new NotFoundException(VEHICLE_NOT_FOUND));
     }
 }

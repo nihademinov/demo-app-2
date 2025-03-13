@@ -1,8 +1,18 @@
 spring:
   application:
       name: demo-app
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 springdoc:
   swagger-ui:
     doc-expansion: none
     tagsSorter: alpha
+

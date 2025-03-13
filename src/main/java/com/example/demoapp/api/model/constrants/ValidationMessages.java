@@ -19,6 +19,8 @@ public class ValidationMessages {
     public static final String EMAIL_VALIDATION = "[5-64] arasi simvol daxil etmek mumkundur";
     public static final String EMAIL_FORMAT_VALIDATION = "Email formatinda sehvlik var";
 
+    public static final String USER_NOT_FOUND = "Istifadeci tapilmadi";
+
     public static final String ROLE_VALIDATION = "Role adlari duzgun yazilmayib";
     public static final String ROLE_SIZE_VALIDATION = "[3-64] arasi simvol daxil oluna biler ";
 
@@ -45,6 +47,11 @@ public class ValidationMessages {
 
     public static final String ORDER_NOT_FOUND = "Sifaris tapılmadı";
     public static final String ORDER_NOT_ACTIVE_FOUND = "Hal hazırda aktiv sifaris tapılmadı";
+
+    public static final String ID_NOT_NULL = "Id bos ola bilmez";
+
+    public static final String DATRE_NOT_NULL = "Tarix bos ola bilmez";
+    public static final String DATRE_NOT_BE_LAST = "Rezervasiya uchun kecmis tarix yazila bilmez";
 
 
 
