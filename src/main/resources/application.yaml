@@ -1,0 +1,8 @@
+spring:
+  application:
+      name: demo-app
+
+springdoc:
+  swagger-ui:
+    doc-expansion: none
+    tagsSorter: alpha
