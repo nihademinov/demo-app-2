@@ -16,13 +16,13 @@ public class OrderResponseDto {
 
     private UUID id;
 
-    private Vehicle vehicle;
+    private VehicleResponseDto vehicle;
 
-    private User user;
+    private UserResponseDto user;
 
     private Boolean active;
 
     private Instant receiveDate;
 
-    private Instant createdAt;
+    private Instant deliveryDate;
 }

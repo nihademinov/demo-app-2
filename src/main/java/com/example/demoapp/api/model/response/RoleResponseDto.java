@@ -10,5 +10,4 @@ import lombok.*;
 @AllArgsConstructor
 public class RoleResponseDto {
     private String name;
-    private String label;
 }

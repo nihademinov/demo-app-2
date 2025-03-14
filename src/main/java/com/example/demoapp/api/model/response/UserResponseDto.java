@@ -18,6 +18,5 @@ public class UserResponseDto {
     private String lastName;
     private List<RoleResponseDto> roles;
     private boolean active;
-    private Instant createdDate;
 
 }
